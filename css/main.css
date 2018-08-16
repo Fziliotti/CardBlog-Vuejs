@@ -1,0 +1,274 @@
+/* 
+OBS: Não segui nenhuma metodologia de nomenclatura por questão de tempo 
+Fiz o projeto na medida em que fui estudando novos conceitos..
+
+*/
+
+/* VARIAVEIS */
+:root{
+	--color-primary: #2980b9;
+	--color-secondary: #95a5a6;
+	--color-tertiary:  #27ae60;
+	--color-quaternary: #3498db;
+	--color-white:  white;
+	--font-h1: 3.2rem;
+	--font-h2: 2.4rem;
+	--font-h3: 1.8rem;
+	--bg: white;
+	--bg-text: black;
+	--def-font-size: 10px;
+}
+
+/* RESET */
+html{
+	font-size: var(--def-font-size);
+	box-sizing: border-box;
+	line-height: 1.6;  /*Materialize*/
+}
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit; 
+}
+
+/* Body com o fundo branco e escritos em preto como padrão */
+body{
+	background-color: var(--bg);
+	color: var(--bg-text);
+	
+}
+
+/* UTILS */
+.colorPrimary{background-color: var(--color-primary);}
+.colorSecondary{background-color: var(--color-secondary);}
+.colorTerciary{background-color: var(--color-tertiary);}
+.colorQuaternary{background-color: var(--color-quaternary);}
+
+
+.txtWhite{color:var(--color-white);}
+.h1{font-size:var(--font-h1);}
+.h2{font-size:var(--font-h2);}
+.h3{font-size:var(--font-h3);}
+
+
+/*
+CABEÇALHO DO SITE 
+*/
+.header{
+	text-align: center;
+}
+
+.header .h1{
+	padding: 3rem;
+	font-family: 'Pacifico';
+	font-weight: 200;
+}
+
+.subheader{
+	background-color: var(--color-quaternary);
+	
+	margin-bottom: 3rem;
+}
+
+
+article{
+	text-align: center;
+	border: .1rem ;
+	padding: 2rem;
+	border-radius: .4rem;
+	box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3); /*Materialize*/
+	transition: all .2s ease-in-out;
+	cursor: pointer;
+}
+
+article:hover{
+	transform: scale(1.02);
+}
+
+article>p {
+	margin-top: 4rem;
+	font-family: 'Roboto', sans-serif;
+	text-align: left;
+	color:  var(--color-white);
+}
+
+article .faixa{
+	position: absolute;
+	top: 5;
+	left: 5;
+	
+}
+
+article .faixa i{
+	font-size: 3em;
+	color: white;
+}
+
+/* MENU */
+
+nav ul{
+	list-style: none;
+	padding: 0;
+	display: flex;
+	width: 50%;
+	margin: 0 auto;
+}
+
+nav ul li {
+	flex:  1 1 0;
+	border-right:  .01rem solid white;
+}
+nav ul li:first-child {
+	border-left:  .01rem solid white;
+}
+
+nav a{
+	text-decoration: none;
+	text-align: center;
+	color: white;
+	display: block;
+	padding:1rem;
+}
+
+nav a:hover{
+	background-color: #555;
+}
+
+
+
+
+/* 
+FOOTER
+ */
+.footer{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 3rem;
+	margin-top: 3rem;
+	height: 180px;
+
+
+}
+
+.footer>h2{
+	vertical-align: middle;
+
+}
+
+.txt-link{
+	text-decoration: none;
+	transition: all .3s ease-in-out;
+}
+
+
+/*
+	Responsividade do GridLayout
+*/
+
+/* Telefones em paisagem e abaixo */
+@media (max-width: 480px) { 
+	.container{
+		width: 100%;
+     	margin: 0 auto;
+		display: grid;
+		grid-template-columns: 1fr; /*fractional relative*/
+		grid-template-rows:auto auto auto;
+		grid-gap: 1.5rem;
+	}
+
+	.acessibility,.theme{
+		display: none;
+	}
+
+	nav ul{
+		width: 100%;
+	}
+}
+ 
+/* Telefones em paisagem a tablet em retrato */
+@media (min-width: 481px) and (max-width: 767px) {
+     .container{
+     	width: 80%;
+     	margin: 0 auto;
+		display: grid;
+		grid-template-columns: repeat(2,1fr); /*fractional relative*/
+		grid-template-rows:auto auto auto;
+		grid-gap: 1.5rem;
+	}
+	.acessibility,.theme{
+		display: none;
+	}
+	nav ul{
+		width: 100%;
+	}
+}
+ 
+/* Tablet em retrato a paisagem e desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+      .container{
+      	width: 80%;
+     	margin: 0 auto;
+		display: grid;
+		grid-template-columns: repeat(3,1fr); /*fractional relative*/
+		grid-template-rows:auto auto auto;
+		grid-gap: 1.5rem;
+	}
+}
+ 
+/* Desktop grande */
+@media (min-width: 980px) {
+     .container{
+     	width: 80%;
+     	margin: 0 auto;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr); /*fractional relative*/
+		grid-template-rows:auto auto auto;
+		grid-gap: 1.5rem;
+	}
+}
+
+/* BOTAO DO TEMA  */
+.theme{
+	text-align: center;
+	background-color: var(--color-tertiary);
+	padding: 1rem;
+	position: fixed;
+	bottom: 5px;
+	right: 5px;
+	border-radius: 1rem;
+	width: auto;
+
+}
+
+.acessibility{
+	text-align: center;
+	background-color: var(--color-tertiary);
+	position: fixed;
+	bottom: 50%;
+	border-radius: 1rem;
+	right: 5px;
+	padding: 1rem;
+
+}
+
+.btn{
+	display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    padding: .375rem 0;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    width: 80%;
+    margin: 5px 0 5px 0;
+    border:none;
+}
+
+
+
+
