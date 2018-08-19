@@ -10,6 +10,6 @@
 - Uso de variáveis no próprio css
 - Uso de REM - ainda falta implementar a responsividade da tag <html>
 <hr>
-Link do projeto: https://fziliotti.github.io/CardBlog-Minimalista/ <br>
+Link do projeto: https://fziliotti.github.io/CardBlog-Vuejs/ <br>
 Link inicial do projeto no CodePen: https://codepen.io/fziliotti/pen/MBqGKj
 
